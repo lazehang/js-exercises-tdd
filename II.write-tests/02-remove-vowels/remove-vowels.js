@@ -3,18 +3,11 @@ function removeVowels(word) {
 
   var result = [];
 
-  characters.forEach(function(character) {
-    if (
-      character === "a" ||
-      character === "o" ||
-      character === "i" ||
-      character === "e" ||
-      character === "u"
-    ) {
-      result.push(character);
-    } else {
-      result.push("_");
-    }
+  const vowels = ["a", "e", "i", "o", "u"];
+
+  characters.forEach(function (character) {
+    if (vowels.includes(character.toLowerCase())) return;
+    result.push(character);
   });
 
   return result.join("");

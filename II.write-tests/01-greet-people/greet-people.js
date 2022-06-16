@@ -1,8 +1,13 @@
 function greetPeople(people) {
-  var greeting = "Hello ";
+  var greeting = "Hello";
 
-  people.forEach(function(person) {
-    greeting = greeting + person;
+  people.forEach(function (person, index) {
+    if (index === people.length - 1) {
+      greeting += " " + person;
+      return;
+    }
+    const connector = index + 2 == people.length ? " and" : ",";
+    greeting = greeting + " " + person + connector;
   });
 
   return greeting;

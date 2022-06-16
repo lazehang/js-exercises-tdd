@@ -1,9 +1,13 @@
 const greetPeople = require("./greet-people");
 test("print list of names prefixed with Hello", function () {
   // Arrange
-  const names = ["John", "Jake"];
-  // Act
-  const greet = greetPeople(names);
-  // Assert
-  expect(greet).toEqual("Hello JohnJake");
+  const inputWithOneName = ["John"];
+  const inputWithTwoNames = ["John", "Jake"];
+  const inputWithMultipleNames = ["John", "Jake", "Mary"];
+
+  expect(greetPeople(inputWithOneName)).toEqual("Hello John");
+  expect(greetPeople(inputWithTwoNames)).toEqual("Hello John and Jake");
+  expect(greetPeople(inputWithMultipleNames)).toEqual(
+    "Hello John, Jake and Mary"
+  );
 });
